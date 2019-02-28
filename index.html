@@ -8,6 +8,9 @@
 <body>
     <div class="background">
        <div class="center">
+          <div>
+                <h2>Punkty: <span id="score"></span></h2>
+            </div>
            <div class="boxes">
                 <div onclick="play2()" class="box box1"></div>
                 <div onclick="play2()" class="box box2"></div>
@@ -15,7 +18,7 @@
             </div>
             <div>
                 <button onclick="play()" class="button">Kliknij i wylosuj bohatera</button>
-                <h2>Punkty: <span id="score"></span></h2>
+                <h2>Ilość kliknięć: <span id="clicks"></span></h2>
             </div>
         </div>
     </div>
@@ -23,6 +26,7 @@
     <audio id="sound2" src="sounds/card.wav"></audio>
     <audio id="sound3" src="sounds/card.wav"></audio>
     <audio id="sound4" src="sounds/card.wav"></audio>
+    <audio id="point" src="sounds/point.wav"></audio>
     <script src="js/script.js"></script>
 </body>
 </html>

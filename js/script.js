@@ -1,5 +1,6 @@
     const sound = document.getElementById('sound');
     const sound2 = document.getElementById('sound2');
+    const point = document.getElementById('point');
     
 function play(){
     sound.play();
@@ -16,7 +17,13 @@ function play(){
       function() {
         sound4.play();}, 500);
     };
-    
+
+function soundPoint() {
+    setTimeout(
+        function() {
+    point.play();}, 600);
+};
+
 function randomColor() {
     const letters = "0123456789ABCDEF";
     let color = "#";
@@ -33,6 +40,8 @@ const box = document.querySelector('.box1');
 const box2 = document.querySelector('.box2');
 const box3 = document.querySelector('.box3');
 let score = document.getElementById('score');
+let clicks = document.getElementById('clicks');
+
     
         const imagePath = 'img/';
         var backgrounds = ['hulk.jpg', 'hulk-2.jpg', 'logan.jpg', 'spider-man.png', 'spider-man-2.jpg', 'volverine.jpg', 'green-lantern.jpg', 'doctor-strange.jpg', 'deadpool.jpg', 'venom.jpg', 'iron-man.jpg']
@@ -44,6 +53,8 @@ let score = document.getElementById('score');
             return myImage;
         }
 
+    let myClicks = 0;
+    clicks.textContent = myClicks++;
     let myScore = 0;
     score.textContent = myScore++;
 
@@ -56,8 +67,22 @@ let score = document.getElementById('score');
         box3.style.backgroundImage = randomImage();
         box3.classList.toggle('rotate');
         background.style.backgroundColor = randomColor();
-        score.textContent = myScore++;
+        clicks.textContent = myClicks++;
+        
+        console.log(box.style.backgroundImage);
+        console.log(box2.style.backgroundImage);
+        console.log(box3.style.backgroundImage);
+        console.log(myScore);
+        console.log(myClicks);
 
+        
+        if (box.style.backgroundImage === box2.style.backgroundImage 
+            && box.style.backgroundImage === box3.style.backgroundImage){
+            console.log('YEAHHH!!! :)');
+            soundPoint();
+            score.textContent = myScore++;
+            };
+        
     });
     
     function play2(){
@@ -67,15 +92,52 @@ let score = document.getElementById('score');
     }
     
     box.addEventListener('click', function (){
-        this.style.backgroundImage = randomImage();
+        box.style.backgroundImage = randomImage();
         this.classList.toggle('rotate');
+        console.log(box.style.backgroundImage);
+        console.log(box2.style.backgroundImage);
+        console.log(box3.style.backgroundImage);
+        clicks.textContent = myClicks++;
+
+        
+        if (box.style.backgroundImage === box2.style.backgroundImage 
+            && box.style.backgroundImage === box3.style.backgroundImage){
+            console.log('YEAHHH!!! :)');
+            soundPoint();
+            score.textContent = myScore++;
+            };
+        
     });
     box2.addEventListener('click', function (){
-        this.style.backgroundImage = randomImage();
+        box2.style.backgroundImage = randomImage();
         this.classList.toggle('rotate');
+        console.log(box.style.backgroundImage);
+        console.log(box2.style.backgroundImage);
+        console.log(box3.style.backgroundImage);
+        clicks.textContent = myClicks++;
+
+        
+        if (box.style.backgroundImage === box2.style.backgroundImage 
+            && box.style.backgroundImage === box3.style.backgroundImage){
+            console.log('YEAHHH!!! :)');
+            soundPoint();
+            score.textContent = myScore++;
+            };
     });
     box3.addEventListener('click', function (){
-        this.style.backgroundImage = randomImage();
+        box3.style.backgroundImage = randomImage();
         this.classList.toggle('rotate');
-        });
+        console.log(box.style.backgroundImage);
+        console.log(box2.style.backgroundImage);
+        console.log(box3.style.backgroundImage);
+        clicks.textContent = myClicks++;
 
+        
+        if (box.style.backgroundImage === box2.style.backgroundImage 
+            && box.style.backgroundImage === box3.style.backgroundImage){
+            console.log('YEAHHH!!! :)');
+            soundPoint();
+            score.textContent = myScore++;
+            };
+        });
+   

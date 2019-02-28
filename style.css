@@ -7,8 +7,19 @@ body {
 h2 {
     text-align: center;
 }
+.title {
+    font-size: 2em;
+}
 #sound2 {
     transition: 1s 1s;
+}
+.box__mask {
+    transition: .2s;
+    width: 200px;
+    height: 200px;
+    background-color: gainsboro;
+    margin: 0 auto 40px auto;
+    display: inline-block;
 }
 .background {
     width: 100%;
@@ -50,7 +61,7 @@ h2 {
     
 }
 .rotate {
-    transform: rotateY(180deg);
+    transform: rotateY(360deg);
 }
 .results {
     margin: auto;
