@@ -1,0 +1,81 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+}
+h2 {
+    text-align: center;
+}
+#sound2 {
+    transition: 1s 1s;
+}
+.background {
+    width: 100%;
+    height: 100vh;
+    padding-top: 100px;
+    transition: .2s;
+    display: flex;
+    align-items: center;
+}
+.center {
+    width: 100%;
+}
+.boxes {
+    display: flex;
+}
+.box {
+    width: 200px;
+    height: 200px;
+    background-color: gainsboro;
+    margin: 0 auto 40px auto;
+    display: inline-block;
+    background-size: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.box:hover {
+    cursor: pointer;
+}
+.box1 {
+     transition: transform .2s .2s, background .2s .2s, border .2s;
+}
+.box2 {
+    transition: transform .2s .3s, background .2s .3s, border .2s;
+   
+}
+.box3 {
+    transition: transform .2s .4s, background .2s .4s, border .2s;
+    
+}
+.rotate {
+    transform: rotateY(180deg);
+}
+.results {
+    margin: auto;
+    background: #165661;
+    color: white;
+    width: 400px;
+    border-radius: 5px;
+    padding: 15px 0;
+}
+.button {
+    margin: 10px auto;
+    font-size: 2em;
+    background: transparent;
+    border: none;
+    border-radius: 45px;
+    color: white;
+    background: #06899e;
+    display: block;
+    padding: 15px 0;
+    width: 400px;
+}
+.button:hover {
+    cursor: pointer;
+}
+.title, .title2, .title3 {
+   margin: 10px auto;
+   text-align: center;
+}

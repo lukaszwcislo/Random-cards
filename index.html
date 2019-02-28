@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Random cards</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background">
+       <div class="center">
+           <div class="boxes">
+                <div onclick="play2()" class="box box1"></div>
+                <div onclick="play2()" class="box box2"></div>
+                <div onclick="play2()" class="box box3"></div>
+            </div>
+            <div>
+                <button onclick="play()" class="button">Kliknij i wylosuj bohatera</button>
+                <h2>Punkty: <span id="score"></span></h2>
+            </div>
+        </div>
+    </div>
+    <audio id="sound" src="sounds/menu_onbutton2.wav"></audio>
+    <audio id="sound2" src="sounds/click.wav"></audio>
+    <audio id="sound3" src="sounds/click.wav"></audio>
+    <audio id="sound4" src="sounds/click.wav"></audio>
+    <script src="js/script.js"></script>
+</body>
+</html>
