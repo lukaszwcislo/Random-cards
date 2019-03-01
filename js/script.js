@@ -23,7 +23,7 @@ function play(){ // funkcja dźwięku przycisku
 function soundPoint() { 
     clickEcho.play();
     setTimeout(function(){
-        marimba.play()}, 700) // dźwięk kiedy zdobywamy punkt
+        marimba.play()}, 1100) // dźwięk kiedy zdobywamy punkt
 };
 
 function play2(){ // dźwięk kliknięcia w kartę
