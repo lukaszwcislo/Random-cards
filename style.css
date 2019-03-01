@@ -23,12 +23,18 @@ h2 {
     transition: 1s 1s;
 }
 .getPoint {
-    animation: getPoint 1.5s;
+    animation: getPoint .7s;
 }
 @keyframes getPoint {
-    70% {
+    40% {
         transform: scale(1.5);
     }
+    50% {
+        filter: brightness(1.5);
+    }
+}
+.getPointTitle {
+    animation: getPoint .7s;
 }
 .background {
     width: 100%;
@@ -37,6 +43,7 @@ h2 {
     transition: .2s;
 /*    display: flex;*/
     align-items: center;
+    background-color: #46744e;
 }
 .center {
     width: 100%;
@@ -59,14 +66,14 @@ h2 {
     cursor: pointer;
 }
 .box1 {
-     transition: transform .2s .2s, background .2s .2s, border .2s;
+     transition: transform .2s .2s, background .2s .2s, filter .2s;
 }
 .box2 {
-    transition: transform .2s .3s, background .2s .3s, border .2s;
+    transition: transform .2s .3s, background .2s .3s, filter .2s;
    
 }
 .box3 {
-    transition: transform .2s .4s, background .2s .4s, border .2s;
+    transition: transform .2s .4s, background .2s .4s, filter .2s;
     
 }
 .rotate {
