@@ -3,30 +3,39 @@
 }
 body {
     margin: 0;
+    overflow-x: hidden;
+}
+h1 {
+    text-align: center;
+    font-size: 2em;
+    margin-top: 0;
 }
 h2 {
     text-align: center;
+    margin: 0;
 }
 .title {
-    font-size: 2em;
+    font-size: 3em;
+    width: 100%;
+    top: 40px;
 }
 #sound2 {
     transition: 1s 1s;
 }
-.box__mask {
-    transition: .2s;
-    width: 200px;
-    height: 200px;
-    background-color: gainsboro;
-    margin: 0 auto 40px auto;
-    display: inline-block;
+.getPoint {
+    animation: getPoint 1.5s;
+}
+@keyframes getPoint {
+    70% {
+        transform: scale(1.5);
+    }
 }
 .background {
     width: 100%;
-    height: 100vh;
-    padding-top: 100px;
+    min-height: 100vh;
+    padding: 100px 100px 0 100px;
     transition: .2s;
-    display: flex;
+/*    display: flex;*/
     align-items: center;
 }
 .center {
@@ -63,6 +72,9 @@ h2 {
 .rotate {
     transform: rotateY(360deg);
 }
+.transformNoDelay {
+    transition: transform .2s, background .2s;
+}
 .results {
     margin: auto;
     background: #165661;
@@ -85,8 +97,4 @@ h2 {
 }
 .button:hover {
     cursor: pointer;
-}
-.title, .title2, .title3 {
-   margin: 10px auto;
-   text-align: center;
 }
