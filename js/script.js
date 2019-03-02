@@ -1,8 +1,7 @@
     const sound = document.getElementById('sound');
     const sound2 = document.getElementById('sound2');
     const point = document.getElementById('point');
-    const clickEcho = document.getElementById('clickEcho');
-    const marimba = document.getElementById('marimba');
+    const point2 = document.getElementById('point2');
     
 function play(){ // funkcja dźwięku przycisku
     sound.play();
@@ -20,10 +19,9 @@ function play(){ // funkcja dźwięku przycisku
         sound4.play();}, 500); //dżwięk trzeciej karty
     };
 
-function soundPoint() { 
-    clickEcho.play();
+function soundPoint() { // dźwięki kiedy zdobywamy punkt
     setTimeout(function(){
-        marimba.play()}, 1100) // dźwięk kiedy zdobywamy punkt
+    point.play()}, 600)
 };
 
 function play2(){ // dźwięk kliknięcia w kartę
@@ -48,11 +46,13 @@ const box3 = document.querySelector('.box3');
 let score = document.getElementById('score');
 let clicks = document.getElementById('clicks');
 let title = document.querySelector('.title');
+let blockClick = document.querySelector('.background__block');
 
     
         const imagePath = 'img/';
 //        var backgrounds = ['hulk.jpg', 'hulk-2.jpg', 'logan.jpg', 'spider-man.png', 'spider-man-2.jpg', 'volverine.jpg', 'green-lantern.jpg', 'doctor-strange.jpg', 'deadpool.jpg', 'venom.jpg', 'iron-man.jpg'];
- var backgrounds = ['hulk-2.jpg', 'spider-man.png', 'volverine.jpg'];
+// var backgrounds = ['hulk-2.jpg', 'spider-man.png', 'volverine.jpg'];
+ var backgrounds = ['logan.jpg', 'spider-man-2.jpg', 'green-lantern.jpg'];
 
         function randomImage() { // losuje 1 element z tablicy 'backgrounds', który jest przypisany do poszczególnej karty
             const index = Math.floor(Math.random()*backgrounds.length);  
@@ -66,17 +66,23 @@ let title = document.querySelector('.title');
     let myScore = 0;
     score.textContent = myScore++; // ilość zdobytych punktów
 
+function BlockClick() {
+    blockClick.classList.add('blockActive');
+    setTimeout(function() {
+    blockClick.classList.remove('blockActive')}, 1200)
+};
+
 function getPoint() {
 
         if (box1.style.backgroundImage === box2.style.backgroundImage 
             && box1.style.backgroundImage === box3.style.backgroundImage){ 
-            // instrukcja co ma się wykonać gdy trafimy 3 takie same karty
+            // wykonuje gdy trafimy 3 takie same karty
             console.log('YEAHHH!!! :)');
             soundPoint(); // dźwięk zdobycia punktu
             setTimeout(function(){
             score.textContent = myScore++; //dodaje punkt
             title.classList.add('getPointTitle'); //dodaje klase z animacją napisu z wynikiem
-            }, 500); //opóźniona o 0,5 s.
+            }, 600); //opóźniona o 0,5 s.
             setTimeout(function(){
                 title.classList.remove('getPointTite');
             }, 2500); // zabiera klasę z animacją
@@ -93,11 +99,14 @@ function getPoint() {
                 box3.classList.remove('getPoint'); // jw do 3 karty
             }, 2500);
             background.style.backgroundColor = randomColor();
+            BlockClick()
         };
 };
 
 
-    btn.addEventListener('click', function() {
+    btn.addEventListener('click', function clickButton() {
+
+        play(); // dzwięk kliknięcia przycisku oraz animacji kart
         box1.style.backgroundImage = randomImage(); // przypisanie karcie 1 wylosowanego obrazu tła
         box1.classList.toggle('rotate'); // dodanie klasy z animacją rotacji
         box2.style.backgroundImage = randomImage();
@@ -134,10 +143,12 @@ function getPointCard() {
                     box3.classList.remove('getPoint');
                 }, 2500);
                 background.style.backgroundColor = randomColor();
+                BlockClick();
             };
 };
     
     box1.addEventListener('click', function (){
+        play2();
         this.style.backgroundImage = randomImage();
         this.classList.toggle('rotate');
         clicks.textContent = myClicks++;
@@ -148,6 +159,7 @@ function getPointCard() {
         getPointCard();
     });
     box2.addEventListener('click', function (){
+        play2();
         this.style.backgroundImage = randomImage();
         this.classList.toggle('rotate');
         clicks.textContent = myClicks++;
@@ -158,6 +170,7 @@ function getPointCard() {
         getPointCard();
     });
     box3.addEventListener('click', function (){
+        play2();
         this.style.backgroundImage = randomImage();
         this.classList.toggle('rotate');
         clicks.textContent = myClicks++;
