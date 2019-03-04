@@ -51,8 +51,7 @@ let blockClick = document.querySelector('.background__block');
     
         const imagePath = 'img/';
 //        var backgrounds = ['hulk.jpg', 'hulk-2.jpg', 'logan.jpg', 'spider-man.png', 'spider-man-2.jpg', 'volverine.jpg', 'green-lantern.jpg', 'doctor-strange.jpg', 'deadpool.jpg', 'venom.jpg', 'iron-man.jpg'];
-// var backgrounds = ['hulk-2.jpg', 'spider-man.png', 'volverine.jpg'];
- var backgrounds = ['logan.jpg', 'spider-man-2.jpg', 'green-lantern.jpg'];
+ var backgrounds = ['hulk-2.jpg', 'spider-man.png', 'volverine.jpg'];
 
         function randomImage() { // losuje 1 element z tablicy 'backgrounds', który jest przypisany do poszczególnej karty
             const index = Math.floor(Math.random()*backgrounds.length);  
